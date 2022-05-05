@@ -1,0 +1,74 @@
+﻿@model WellnessMaxApp.Repository.Models.WellnessProgramM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>WellnessProgramM</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="WellnessProgramId" />
+            <div class="form-group">
+                <label asp-for="WellnessProgramName" class="control-label"></label>
+                <input asp-for="WellnessProgramName" class="form-control" />
+                <span asp-validation-for="WellnessProgramName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Venue" class="control-label"></label>
+                <input asp-for="Venue" class="form-control" />
+                <span asp-validation-for="Venue" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsPaid" /> @Html.DisplayNameFor(model => model.IsPaid)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateTimeUtc" class="control-label"></label>
+                <input asp-for="DateTimeUtc" class="form-control" />
+                <span asp-validation-for="DateTimeUtc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fee" class="control-label"></label>
+                <input asp-for="Fee" class="form-control" />
+                <span asp-validation-for="Fee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalMembers" class="control-label"></label>
+                <input asp-for="TotalMembers" class="form-control" />
+                <span asp-validation-for="TotalMembers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DurationInHours" class="control-label"></label>
+                <input asp-for="DurationInHours" class="form-control" />
+                <span asp-validation-for="DurationInHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HostName" class="control-label"></label>
+                <input asp-for="HostName" class="form-control" />
+                <span asp-validation-for="HostName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
